@@ -17,7 +17,7 @@ public class ProductService {
     }
 
     public Product addProduct(Product product) {
-        return productDAO.add(product);
+        return productDAO.addProduct(product);
     }
 
     public List<Product> getAllProducts() {
@@ -29,10 +29,10 @@ public class ProductService {
     }
 
     public void updateProduct(int productId, Product product) {
-        productDAO.update(productId, product);
+        productDAO.updateProduct(productId, product);
     }
 
     public void deleteProduct(int productId) {
-        productDAO.delete(productId);
+        productDAO.deleteProduct(productId);
     }
 }

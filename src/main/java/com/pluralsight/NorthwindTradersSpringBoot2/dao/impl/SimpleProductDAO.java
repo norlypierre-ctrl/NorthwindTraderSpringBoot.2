@@ -18,8 +18,10 @@ public class SimpleProductDAO implements IProductDAO {
     }
 
     @Override
-    public Product add(Product product) {
-        int maxId = products.stream().mapToInt(Product::getProductId).max().orElse(0);
+    public Product addProduct(Product product) {
+        int maxId = products.stream()
+                .mapToInt(Product::getProductId)
+                .max().orElse(0);
         product.setProductId(maxId + 1);
         products.add(product);
         return product;
@@ -32,18 +34,19 @@ public class SimpleProductDAO implements IProductDAO {
 
     @Override
     public Product getProductById(int productId) {
-        return products.stream().filter(p -> p.getProductId() == productId).findFirst().orElse(null);
+        return products.stream().filter(p -> p.getProductId()
+                == productId).findFirst().orElse(null);
     }
 
     @Override
-    public void update(int productId, Product product) {
+    public void updateProduct(int productId, Product product) {
         int idx = getProductIndex(productId);
         if (idx != -1)
             products.set(idx, product);
     }
 
     @Override
-    public void delete(int productId) {
+    public void deleteProduct(int productId) {
         int idx = getProductIndex(productId);
         if (idx != -1)
             products.remove(idx);
