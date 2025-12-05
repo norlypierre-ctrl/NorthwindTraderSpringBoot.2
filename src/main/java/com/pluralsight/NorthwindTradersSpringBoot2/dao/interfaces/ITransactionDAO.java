@@ -1,6 +1,6 @@
-package com.pluralsight.ledger2.dao.interfaces;
+package com.pluralsight.NorthwindTradersSpringBoot2.dao.interfaces;
 
-import com.pluralsight.ledger2.models.Transaction;
+import com.pluralsight.NorthwindTradersSpringBoot2.models.Transaction;
 
 import java.util.List;
 
